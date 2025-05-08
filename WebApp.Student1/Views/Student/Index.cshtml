@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h2>Student Details</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Student ID</th>
+        <td>@Model.StudentId</td>
+    </tr>
+    <tr>
+        <th>Student Name</th>
+        <td>@Model.StudentName</td>
+    </tr>
+    <tr> 
+        <th>Course</th> 
+        <td>
+            <ul>
+                @foreach(var item in Model.Enrollment)
+                {
+                    <li>
+                        @item.Course.CourseName
+                    </li>
+                }
+            </ul>
+        </td> 
+     </tr>
+</table>
+
+<a asp-action="Index" asp-controller="Course">Available Courses</a> 
+
+
+
